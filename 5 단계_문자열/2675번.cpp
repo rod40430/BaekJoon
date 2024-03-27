@@ -28,8 +28,10 @@ int main(void)
 	{
 		string word{ item[i].second };
 		for (const auto& x : word)
-			for (int i{}; i < item[i].first; ++i)
+		{
+			for (int j{}; j < item[i].first; ++j)
 				cout << x;
+		}
 
 		cout << endl;
 	}

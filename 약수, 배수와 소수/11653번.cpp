@@ -1,34 +1,33 @@
 #include <iostream>
 #include <vector>
+#include <cmath>
 
 using namespace std;
 
 int function(int num)
 {
-    for (int i = 2; i * i <= num; i++) {
-        if (num % i == 0) {
+    for (int i{2}; i * i <= num; i++) {
+        if (num % i == 0)
             return false;
-        }
     }
     return true;
 }
-
 
 int main()
 {
     int a;
     cin >> a;
-    vector<int> count;
+    vector<int> count{};
 
-
-    for (int i{ 1 }; i <= a; ++i)
+    if (a == 1)
+        return 0;
+    
+    for (int i{1};i <= (int)sqrt(a); ++i)
     {
-        int num{ a % i };
-
-        if (num == 0 and i != 1)
+        if (a % i == 0 and i != 1)
             count.push_back(i);
     }
-
+    
     for (; 1;)
         {
             for(auto x : count)
@@ -42,8 +41,7 @@ int main()
                 }
             if (function(a))
             {
-                if (a != 1)
-                    cout<<a<<endl;
+                cout<<a<<endl;
                 return 0;
             }
         }
